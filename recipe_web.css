@@ -5,6 +5,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #2a7b9b;
+  overflow-x: hidden;
   background: linear-gradient(
     90deg,
     rgba(42, 123, 155, 1) 0%,

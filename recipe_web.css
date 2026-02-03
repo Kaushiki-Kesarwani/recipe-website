@@ -1,171 +1,235 @@
+/* Mobile-first responsive styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: #2a7b9b;
-  overflow-x: hidden;
+  min-height: 100vh;
   background: linear-gradient(
     90deg,
     rgba(42, 123, 155, 1) 0%,
     rgba(87, 199, 133, 1) 50%,
     rgba(237, 221, 83, 1) 100%
   );
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-  width: 100vw;
-  height: 90vh;
+  width: 100%;
+  height: auto;
+  padding-bottom: 2rem;
 }
 
 .list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 #unordered {
-  height: 85px;
   display: flex;
-  justify-content: center;
-  justify-content: space-around;
-   margin-top: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  margin: 0;
 }
 
 .navbar {
   background-color: aliceblue;
- 
 }
 
 #links {
   display: flex;
-  margin-top: 1em;
-  gap: 3em;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .cook {
-  font-size: 1.5em;
+  font-size: 1rem;
+  padding: 0.25rem 0.35rem;
 }
 
 #logo {
-  width: 70px;
-  margin-top: 0.2em;
+  width: 48px;
+  height: auto;
 }
 
 #search {
-  width: 30px;
-  border-radius: 1em;
+  width: 24px;
+  height: auto;
+  border-radius: 0.6em;
 }
 
 #recipe {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
+
 i {
-  margin-top: 1.2em;
-  font-size: 1.8em;
+  margin-top: 0.2em;
+  font-size: 1rem;
+  font-style: normal;
 }
 
 #searchbar {
   display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .foot {
   width: 100%;
   background-color: aliceblue;
-  min-height: 4em;
-  padding: 3px;
+  padding: 0.6rem 0.5rem;
 }
 
 #details {
   display: flex;
-  gap: 20px;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 #para {
   text-align: center;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
 }
 
 .main {
-  width: 90%;
-  /* border: 1px solid blueviolet; */
-  margin: auto;
-  padding: 20px;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 1);
-  border-radius: 15px;
+  width: 95%;
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 16px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
 }
 
 .item {
   display: flex;
-  justify-content: space-around;
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
 }
 
 #fudge {
-  height: 28em;
-  width: auto;
+  width: 100%;
+  height: auto;
   border-radius: 1.2em;
-  /* box-shadow: 2px 5px 50px rgba(0, 1, 0, 1); */
- transition: transform 3s ease-out;
-  
+  transition: transform 0.3s ease-out;
 }
 
 .rightbox:hover{
- transform: scale(1.1);
- 
+  transform: scale(1.02);
 }
 
 .Ingredients {
   list-style-type: square;
+  padding-left: 1.25rem;
 }
 
 .box1 {
-  box-shadow: 1px 1px 10px rgb(116, 115, 115);
-  margin-bottom: 70px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.12);
+  margin-bottom: 0.8rem;
   border-radius: 10px;
   padding: 0.9em;
-  cursor: pointer;
-  width: 50%;
-
+  cursor: default;
+  width: 100%;
+  background: rgba(255,255,255,0.02);
 }
 
 h1{
   color: azure;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .rightbox{
   position: relative;
   overflow: hidden;
-} 
+  width: 100%;
+}
 
 .rightbox .overlay{
   position: absolute;
-  top:0;
-  left: 0; 
-  height: 28em;
-  width: 100%;
-  background-color: rgba(8, 8, 8, 0.713) ; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(8, 8, 8, 0.6);
   border-radius: 0.9em;
   color: wheat;
   opacity: 0;
-  transition: all 0.3s linear 0s;
-}
-
-.overlay:hover{
-  opacity: 1;
-}
-
-.overlay{
+  transition: opacity 0.25s linear 0s;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.rightbox:hover .overlay,
+.overlay:hover {
+  opacity: 1;
+}
+
+/* Larger screens: tablet and desktop */
+@media (min-width: 600px) {
+  #unordered {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #links {
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+
+  .item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .box1 {
+    width: 55%;
+  }
+
+  .rightbox {
+    width: 45%;
+  }
+
+  i { font-size: 1rem; }
+}
+
+@media (min-width: 900px) {
+  #logo { width: 70px; }
+  .cook { font-size: 1.1rem; }
+  .main { padding: 24px; }
+  .box1 { width: 50%; }
+  .rightbox { width: 48%; }
+  h1 { font-size: 1.6rem; }
+  #fudge { border-radius: 1.4em; }
 }
  
 
